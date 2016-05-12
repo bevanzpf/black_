@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   post 'login' => 'sessions#create'
 
-  delete 'logout' => 'session#destroy'
+  delete 'logout' => 'sessions#destroy'
 
   resources :users
 
