@@ -1,0 +1,11 @@
+orange:
+  desc: "orange not just a color"
+  created_at: <%= 10.minutes.ago.to_datetime %>
+
+tudo:
+  desc: "potato is a fashion vegetable"
+  created_at: <%= 3.years.ago.to_datetime %>
+
+happy_working:
+  desc: "do you make you feel happy"
+  created_at: <%= Time.zone.now.to_datetime %>

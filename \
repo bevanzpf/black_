@@ -1,0 +1,21 @@
+class LikesController < ApplicationController
+
+  def create
+    @like = current_user.likes.build(work_id: params[:work_id])
+
+    respond_to do |fromat|
+      if @like.save
+        format.js {}
+      end
+    end
+  end
+
+  def destroy
+    like = Like.find_by(id: params[:id])
+    like = current_user.likes.where(work_id: params[:work_id]).first
+    like.destroy
+    respond_to do |fromat|
+      format.js
+    end
+  end
+end

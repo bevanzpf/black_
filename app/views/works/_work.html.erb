@@ -1,0 +1,32 @@
+<div class ="work ">
+    <div class= work_pic>
+    <span><%=link_to image_tag(work.picture, alt:"work"), "#" %></span>
+    <div class="about">
+        <span class="subject"> <strong><%= work.subject%></strong></span>
+        </br>
+        <p>
+        <%= work.desc %>
+        </p>
+    </div>
+</div> <!--end work_pic -->
+    <div class="deginer">
+        <div class="deginer_name">
+        <span class="deginer_name">by: <%= link_to work.user.name, user_path(work.user) %>
+      </span>
+  </div> <!--end deginer_name -->
+  <div class="like">
+<% if logged_in? %>
+    <span id= "count_of_<%=work.id%>",class="link_acounts"><%= work.likes_count %></span>
+        <%if like = current_user.likes.where(work_id: work.id).first %>
+    <%= link_to like_path(like,work_id: work.id), id: work.id, method: :delete, remote: true do %>
+      <span class="glyphicon glyphicon-star"></span>
+    <% end %>
+<% else %>
+  <%= link_to  likes_path(work_id: work.id),id: work.id, method: :post, remote: true do %>
+      <span class="glyphicon glyphicon-star-empty "></span>
+  <% end %>
+<% end %>
+<% end %>
+      </div> <!-- end like -->
+   </div>
+</div>

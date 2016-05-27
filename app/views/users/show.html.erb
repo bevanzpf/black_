@@ -8,4 +8,13 @@
       </h1>
     </section>
   </aside>
+  <div class="col-md-8">
+    <% if @user.works.any? %>
+      <h3> Works(<%= @user.works.count %>) </h3>
+      <ul class="works">
+        <%= render @works %>
+      </ul>
+        <%= will_paginate @works %>
+    <% end %>
+  </div>
 </div>

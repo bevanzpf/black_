@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'likes/create'
+
+  get 'likes/destroy'
+
   get 'password_reset/new'
 
   get 'password_reset/edit'
@@ -22,6 +26,10 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
 
   resources :password_resets,     only: [:new, :create, :edit, :update]
+
+  resources :works,  only: [:new, :create, :destroy]
+
+  resources :likes, only:[:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

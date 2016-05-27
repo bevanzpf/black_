@@ -1,0 +1,9 @@
+<%if like = current_user.likes.where(work_id: work.id).first %>
+    <%= link_to like_path(like), method: :delete, remote: true do %>
+      <span class="glyphicon glyphicon-bookmark"></span>
+    <% end %>
+<% else %>
+  <%= link_to like_path(work_id: work.id), method: :post, remote: true do %>
+    <span class="glyphicon glyphicon-bookmark favorite_color"></span>
+  <% end %>
+<% end %>

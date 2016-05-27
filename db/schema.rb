@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518060241) do
+ActiveRecord::Schema.define(version: 20160524022434) do
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "work_id",    limit: 4
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",              limit: 255
@@ -30,4 +37,17 @@ ActiveRecord::Schema.define(version: 20160518060241) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  create_table "works", force: :cascade do |t|
+    t.string   "subject",     limit: 255
+    t.string   "picture",     limit: 255
+    t.text     "desc",        limit: 65535
+    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "likes_count", limit: 4,     default: 0
+  end
+
+  add_index "works", ["user_id"], name: "index_works_on_user_id", using: :btree
+
+  add_foreign_key "works", "users"
 end

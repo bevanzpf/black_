@@ -1,0 +1,12 @@
+<% provide(:title, "add new work") %>
+<%= form_for(@work, multipart: true)  do |f| %>
+   <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :subject %>
+    <%= f.text_field :subject %>
+    <%= f.label :desc %>
+    <%= f.text_area :desc %>
+    <%= f.file_field :picture %>
+  </div>
+    <%= f.submit "save",class: "btn btn-primary" %>
+<% end %>

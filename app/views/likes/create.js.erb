@@ -1,0 +1,10 @@
+alert("make a like");
+var count_span =$("#count_of_<%=@work.id%>");
+var count = count_span.html();
+var new_count = parseInt(count) + 1;
+
+count_span.html(new_count);
+
+count_span.next().remove();
+count_span.append("<a data-remote='true' rel='nofollow' data-method='delete' href='/likes/<%=@like.id%>?work_id=<%=@work.id%>'>\
+                  <span class='glyphicon glyphicon-star'></a>");

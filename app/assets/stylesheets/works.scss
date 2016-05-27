@@ -1,0 +1,52 @@
+// Place all the styles related to the Works controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div .work{
+    margin-top: 25px;
+    width: 220px;
+    height: 162 px;
+    position: relative;
+    float: left;
+    }
+.work_pic{
+    margin:0px 10px;
+    width:200px;
+    height:150px;
+}
+.work_pic img {
+    width: 200px;
+    height: 150px;
+}
+div.about{
+    display: none;
+    width: 200px;
+    position: absolute;
+    top: 5px;
+}
+
+div .work_pic:hover .about{
+    display: block;
+}
+
+div .work_pic:hover img{
+    filter:alpha(opacity=60);
+    -moz-opacity:0.5;
+    opacity: 0.5;
+}
+
+div.deginer{
+    width:200px;
+    margin:0px 10px;
+}
+div.deginer_name{
+    float:left;
+    width:100px;
+}
+div.like{
+    padding-right:2px;
+    text-align:right;
+    float:right;
+    width:100px;
+}
