@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    store_location request.referrer if request.referrer.present?
   end
 
   def create

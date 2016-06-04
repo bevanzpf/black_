@@ -50,3 +50,60 @@ div.like{
     float:right;
     width:100px;
 }
+/* show page  */
+div.work-comment{
+    width:750px;
+}
+div.author{
+    height:70px;
+}
+div.author img
+{
+    width:60px;
+    height:60px;
+    float:left;
+    padding:5px 0px;
+    border-radius:50%;
+}
+div.user-message
+{
+    float:left;
+    height:50px;
+    padding:10px 0px;
+}
+div.author .subject
+{
+    float:left;
+    line-height:25px;
+    font-size:25px;
+    padding-left:10px;
+}
+div.author .name
+{
+    float:left;
+    line-height:25px;
+    font-size:10px;
+    padding-left:10px;
+    span{ color: #777; }
+}
+div.picture-show
+{
+    margin-top:20px;
+}
+div.picture-show img
+{
+    width:750px;
+    height:430px;
+}
+div.desc
+{
+    margin-top:10px;
+    font-size:17px;
+    text-indent:25px;
+}
+div.comments-num
+{
+    font-size:30px;
+    margin:10px 0px;
+}
+

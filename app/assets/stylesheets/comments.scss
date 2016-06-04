@@ -1,0 +1,51 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+div.commenter-pic
+{
+    width:40px;
+    float:left;
+}
+div.a-comment img{
+    width:40px;
+    height:40px;
+    margin:10px 0px;
+    border-radius:50%
+}
+div.name-content
+{
+    float:left;
+    padding-bottom:10px;
+}
+div.name
+{
+    float:left;
+    padding-top:10px;
+    padding-left:15px;
+}
+div.content
+{
+    padding-top:5px;
+    padding-left:15px;
+}
+div.content p
+{
+    width:500px;
+}
+div.content .time
+{
+    font-size:10px;
+    color: #777;
+}
+div.new-comment{
+    padding-top:10px;
+}
+div.new-comment textarea{
+    border:1px solid #317DDA;
+    width:750px;
+    height:100px;
+}
+div.new-comment .submit-button{
+    width: 50px;
+    float:right;
+}

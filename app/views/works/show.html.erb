@@ -1,0 +1,38 @@
+<%= provide(:title, @work.subject)%>
+<div class="work-comment">
+
+    <div class="work-show">
+        <div class="author">
+            <div class="image">
+                <%=gravatar_for(@work.user)%>
+            </div>
+            <div class="user-message">
+                <div class="subject"># <%=@work.subject%></div> 
+                <div class="clearfix"></div>
+                <div class="name">by: <%=link_to @work.user.name, user_path(@work.user)%>
+                <span class="time"><%=time_ago_in_words @work.created_at %> ago</span>
+                 </div>
+            </div>
+        </div> <!--end author -->
+        <div class="clearfix"></div>
+        <div class="picture-show"> <%=image_tag(@work.picture)%> </div> <div class="desc">
+            <p> <%=@work.desc%></p>
+            <br>
+            <hr>
+        </div>
+    </div> <!--end work -->
+    <div class="comments">
+        <div class="comments-num"><span>评论（<%= @work.comments.count %>）</span></div>
+        <%=render @comments %>
+    </div>
+    <% if logged_in? %>
+    <div class="new-comment">
+        <%=render "comments/comment_form"%>
+    </div>
+    <% else %>
+        <div signupin>
+            <p><%= link_to "登录", login_path, class: "btn btn-info"%>or<%= link_to "注册", signup_path, class: "btn btn-info"%>后可以参与评论</p>
+        </div>
+    <% end %>
+
+</div>

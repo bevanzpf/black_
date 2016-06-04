@@ -22,6 +22,12 @@ class WorksController < ApplicationController
    redirect_to user_path(current_user)
   end
 
+  def show
+    @work = Work.find(params[:id])
+    @comments = @work.comments
+    @comment = current_user.comments.build if logged_in?
+  end
+
   private
 
 

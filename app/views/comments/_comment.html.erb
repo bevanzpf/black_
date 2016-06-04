@@ -1,0 +1,17 @@
+<div class="a-comment">
+    <div class="commenter-pic">
+        <%=gravatar_for comment.user%>
+    </div>
+    <div class="name-content">
+       <div class="name">
+           <%=link_to comment.user.name, user_path(comment.user)%>
+       </div> 
+       <div class="clearfix"></div>
+       <div class="content">
+           <div><p><%= comment.body %></p></div> 
+           <div class="time"><%=time_ago_in_words comment.created_at %></div>
+       </div>
+    </div>
+    <div class="clearfix"></div>
+    <hr>
+</div>

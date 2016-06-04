@@ -27,9 +27,11 @@ Rails.application.routes.draw do
 
   resources :password_resets,     only: [:new, :create, :edit, :update]
 
-  resources :works,  only: [:new, :create, :destroy]
+  resources :works,  only: [:new, :create, :destroy,:show]
 
   resources :likes, only:[:create, :destroy]
+
+  resources :comments, only:[:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :comments, dependent: :destroy
   has_many :works, dependent: :destroy
   has_many :likes
   has_many :liking_works, through: :likes, source: :work

@@ -1,0 +1,6 @@
+<span>comment:</span>
+<%= form_for @comment do |f|%>
+    <%=f.hidden_field :work_id, value: @work.id %>
+    <%=f.text_area :body %>
+    <div class="submit-button"><%=f.submit "确定", class: "btn btn-info"%></div>
+<% end %>
