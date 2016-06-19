@@ -4,7 +4,7 @@
     <div class="work-show">
         <div class="author">
             <div class="image">
-                <%=gravatar_for(@work.user)%>
+                <%=link_to gravatar_for(@work.user), user_path(@work.user)%>
             </div>
             <div class="user-message">
                 <div class="subject"># <%=@work.subject%></div> 
@@ -15,11 +15,15 @@
             </div>
         </div> <!--end author -->
         <div class="clearfix"></div>
-        <div class="picture-show"> <%=image_tag(@work.picture)%> </div> <div class="desc">
+        <div class="picture-show"> <%=image_tag(@work.picture)%> </div>
+            <div class="desc">
             <p> <%=@work.desc%></p>
+            <% if current_user == @work.user %>
+                <div class="delete"><button class="btn btn-info"><%= link_to '删除', @work,method: :delete, data:{ confirm: "确定删除？"} %></button></div>
+            <% end %>
             <br>
             <hr>
-        </div>
+            </div>
     </div> <!--end work -->
     <div class="comments">
         <div class="comments-num"><span>评论（<%= @work.comments.count %>）</span></div>

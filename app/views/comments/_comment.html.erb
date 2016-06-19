@@ -1,6 +1,6 @@
 <div class="a-comment">
     <div class="commenter-pic">
-        <%=gravatar_for comment.user%>
+        <%=link_to gravatar_for(comment.user), user_path(comment.user)%>
     </div>
     <div class="name-content">
        <div class="name">

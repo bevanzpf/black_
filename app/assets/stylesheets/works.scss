@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+@media(min-width:1200px){
 div .work{
     margin-top: 25px;
     width: 220px;
@@ -100,6 +100,10 @@ div.desc
     margin-top:10px;
     font-size:17px;
     text-indent:25px;
+    .delete{
+        float:right;
+        margin-bottom:20px;
+    }
 }
 div.comments-num
 {
@@ -107,3 +111,119 @@ div.comments-num
     margin:10px 0px;
 }
 
+} /*desktop end*/
+@media(max-width:767px){
+   .work{
+    margin-top: 3.25%;
+    margin-right:5%;
+    margin-left:5%;
+    width:40%;
+    height: 162px;
+    position: relative;
+    float: left;
+    }
+.work_pic{
+    margin:0px 10px;
+    width:91%;
+    height:92%;
+}
+.work_pic img {
+    width: 100%;
+    height: 92%;
+}
+div.about{
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 3.3%;
+}
+
+div .work_pic:hover .about{
+    display: block;
+}
+
+div .work_pic:hover img{
+    filter:alpha(opacity=60);
+    -moz-opacity:0.5;
+    opacity: 0.5;
+}
+
+div.deginer{
+    width:90.9%; /*200*/
+    margin:0px 4.545%;
+}
+div.deginer_name{
+    float:left;
+    width:50%; /*100*/
+}
+div.like{
+    padding-right:2%;/*2px;*/
+    text-align:right;
+    float:right;
+    width:50%; /*100*/
+}
+/* show page  */
+div.work-comment{
+    width: 100%;
+}
+div.author{
+    height: 9.333%/*70px;*/
+}
+div.author img
+{
+    width:8%;/*60px;*/
+    height:8%;
+    float:left;
+    /*padding:5px 0px;*/
+    /*padding:0.66% 0px;*/
+    border-radius:50%;
+}
+div.user-message
+{
+    float:left;
+    height:71.42%;/*50px;*/
+    padding:1%/*5px*/ 0px;
+}
+div.author .subject
+{
+    float:left;
+    line-height:50%;/*25px;*/
+    font-size:50%;/*25px;*/
+    padding-left:9.34%;/*10px;*/
+}
+div.author .name
+{
+    float:left;
+    line-height:4%;
+    font-size:28.57%;
+    padding-left:8%;
+    span{ color: #777; }
+}
+div.picture-show
+{
+    margin-top:4.65%;
+}
+div.picture-show img
+{
+    width:100%;
+    height:60%;
+}
+div.desc
+{
+    width:100%;
+    height:20px;
+    margin-top:10px 0px;
+    font-size:17px;
+    text-indent:25px;
+    margin-bottom:40px;
+    .delete{
+        float:right;
+        margin-bottom:10px;
+    }
+}
+div.comments-num
+{
+    font-size:20px;
+    margin:10px 0px;
+}
+}

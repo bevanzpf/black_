@@ -52,11 +52,11 @@ module SessionsHelper
     session.delete(:forwarding_url)
   end
 
-  def store_location(url)
+  def store_location(*url)
     unless url == nil
-      session[:forwarding_url] = url
+      session[:forwarding_url] = url[0]
     else
-    session[:forwarding_url] = request.url if request.get?
+      session[:forwarding_url] = request.url if request.get?
     end
   end
 end

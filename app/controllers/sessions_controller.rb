@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
   def new
-    store_location request.referrer if request.referrer.present?
+    if request.referrer.present? && session[:forwarding_url] == nil
+       store_location request.referrer
+    end
   end
 
   def create

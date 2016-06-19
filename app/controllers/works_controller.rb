@@ -12,7 +12,7 @@ class WorksController < ApplicationController
       flash[:success] = "Micropost created!"
       redirect_to user_path(current_user)
     else
-      render 'static_pages/home'
+      render 'new'
     end
   end
 
