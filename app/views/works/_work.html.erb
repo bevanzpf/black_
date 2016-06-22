@@ -11,8 +11,7 @@
 </div> <!--end work_pic -->
     <div class="deginer">
         <div class="deginer_name">
-        <span class="deginer_name">by: <%= link_to work.user.name, user_path(work.user) %>
-      </span>
+        <span class="deginer_name">by <%= link_to  work.user.name, user_path(work.user) %></span>
   </div> <!--end deginer_name -->
   <div class="like">
 <% if logged_in? %>
