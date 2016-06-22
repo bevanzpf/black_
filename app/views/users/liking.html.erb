@@ -1,0 +1,19 @@
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= gravatar_for @user%>
+      <h1><%= @user.name %></h1>
+      <span><%= link_to "view my profile",@user%></span>
+      <span><b>work:</b><%=@user.works.count%></span>
+    </section>
+    <section class="stats">
+      <%= render 'shared/stats'%>
+    </section>
+  </aside>
+  <div class="col-md-8">
+      <h3><b><%=@user.name%></b>'favorite (<%=@user.liking_works.count%>)</h3>
+  <% if @works.any? %>
+      <%= render @works%>
+  <% end %>
+  </div>
+</div>

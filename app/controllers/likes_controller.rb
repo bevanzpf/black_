@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-
+before_action :logged_in_user, only:[:create, :destroy]
   def create
     @like = current_user.likes.build(work_id: params[:work_id])
     @work = @like.work
