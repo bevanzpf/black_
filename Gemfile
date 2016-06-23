@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'jquery-rails'
+gem 'mini_magick'
 gem 'jquery-turbolinks'
 gem 'faker','1.4.2'
 gem 'carrierwave', '~>0.10.0'

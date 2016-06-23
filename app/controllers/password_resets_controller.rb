@@ -11,10 +11,10 @@ class PasswordResetsController < ApplicationController
     if @user
       @user.create_reset_digest
       @user.send_password_reset_email
-      flash[:info] = "Email sent with password reset instructions"
+      flash[:info] = "系统已发送更改密码的验证邮件，请查收"
       redirect_to root_url
     else
-      flash.now[:danger] = "Email address not found"
+      flash.now[:danger] = "未找到该用户"
       render 'new'
     end
   end
@@ -23,11 +23,11 @@ class PasswordResetsController < ApplicationController
 
   def update
     if params[:user][:password].empty?
-      @user.errors.add(:password, "can't be empty")
+      @user.errors.add(:password, "密码不能为空")
       render 'edit'
     elsif @user.update_attributes(user_params)
       log_in @user
-      flash[:success] = "Password has been reset."
+      flash[:success] = "密码已重置."
       redirect_to @user
     else
       render 'edit'
@@ -53,7 +53,7 @@ class PasswordResetsController < ApplicationController
   end
   def check_expiration
     if @user.password_reset_expired?
-      flash[:danger] = "Password reset has expired."
+      flash[:danger] = "链接超时请重新操作."
       redirect_to new_password_reset_url
     end
   end

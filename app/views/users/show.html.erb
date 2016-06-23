@@ -12,7 +12,7 @@
     </section>
     <section>
         <%=@user.liking_works.count%>
-        <%=link_to "liking", liking_user_path(@user) %>
+        <%=link_to "赞过", liking_user_path(@user) %>
     </section>
   </aside>
   <div class="col-md-8">
@@ -20,7 +20,7 @@
     <% if @user.works.any? %>
       <h3> 作品(<%= @user.works.count %>) </h3>
       <ul class="works">
-        <%= render @works %>
+          <%= render @works %>
       </ul>
         <%= will_paginate @works %>
     <% end %>
