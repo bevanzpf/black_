@@ -9,7 +9,7 @@ class WorksController < ApplicationController
   def create
     @work = current_user.works.build(work_params)
     if @work.save
-      flash[:success] = "Micropost created!"
+      flash[:success] = "发布成功!"
       redirect_to user_path(current_user)
     else
       render 'new'
@@ -18,7 +18,7 @@ class WorksController < ApplicationController
 
   def destroy
    Work.find(params[:id]).destroy
-   flash[:success] = "you have deleted a work"
+   flash[:success] = "你删除了一个作品"
    redirect_to user_path(current_user)
   end
 

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "user deleted"
+    flash[:success] = "删除了一个用户"
     redirect_to users_url
   end
   def new
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
+      flash[:info] = "注册成功，请查收邮件以激活."
       redirect_to root_url
     else
       render 'new'
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "更新成功."
       redirect_to @user
 
     else

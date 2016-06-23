@@ -1,5 +1,4 @@
 Hi, <%=@user.name %>
 
-Welcome to the Smaple App! Click on the link below to activate your account:
-
+欢迎注册打开一下链接以激活您的帐号：
 <%=edit_account_activation_url(@user.activation_token, email: @user.email)%>
