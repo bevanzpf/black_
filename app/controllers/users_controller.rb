@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @works = @user.works.paginate(page: params[:page])
+    @works = @user.works.paginate(page: params[:page], per_page: get_per_page)
   end
 
   def create
@@ -50,20 +50,20 @@ class UsersController < ApplicationController
   def following
     @title = "正在关注"
     @user = User.find(params[:id])
-    @users = @user.following.paginate(page: params[:page])
+    @users = @user.following.paginate(page: params[:page], per_page: get_per_page)
     render 'show_follow'
   end
 
   def followers
     @title = "关注者"
     @user = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
+    @users = @user.followers.paginate(page: params[:page],per_page: get_per_page)
     render 'show_follow'
   end
 
   def liking
     @user = User.find(params[:id])
-    @works = @user.liking_works
+    @works = @user.liking_works.paginate(page: params[:page], per_page: get_per_page)
     render 'liking'
   end
 

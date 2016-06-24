@@ -19,9 +19,7 @@
       <%= render 'follow_form'if logged_in? %>
     <% if @user.works.any? %>
       <h3> 作品(<%= @user.works.count %>) </h3>
-      <ul class="works">
           <%= render @works %>
-      </ul>
         <%= will_paginate @works %>
     <% end %>
   </div>

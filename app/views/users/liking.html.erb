@@ -14,6 +14,8 @@
       <h3><b><%=@user.name%></b>'favorite (<%=@user.liking_works.count%>)</h3>
   <% if @works.any? %>
       <%= render @works%>
+      <div class="clearfix"></div>
+      <%=will_paginate @works%>
   <% end %>
   </div>
 </div>
